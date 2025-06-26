@@ -147,7 +147,7 @@ const Register = () => {
         <div className="w-full max-w-md">
           {/* Logo mobile */}
           <div className="lg:hidden text-center mb-8">
-            <img src="/LogoMobile.png" alt="Logo ArqFactory" className="w-20 h-20 mx-auto mb-4 object-contain" />
+            <img src="/LogoMobile.png" alt="Logo ArqFactory" className="w-40 h-40 mx-auto mb-4 object-contain" />
           </div>
           {/* Alertas */}
           {error && <Alert type="error" message={error} />}
