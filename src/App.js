@@ -13,90 +13,93 @@ import ConfiguracoesPage from './pages/ConfiguracoesPage';
 import PerfilPage from './pages/PerfilPage';
 import './App.css';
 import { AuthProvider } from './hooks/useAuth';
+import { DashboardProvider } from './contexts/DashboardContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route 
-            path="/dashboard" 
-            element={
-              <ProtectedRoute>
-                <DashboardPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/projetos" 
-            element={
-              <ProtectedRoute>
-                <ProjetosPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/clientes" 
-            element={
-              <ProtectedRoute>
-                <ClientesPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/orcamentos" 
-            element={
-              <ProtectedRoute>
-                <OrcamentosPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/cronograma" 
-            element={
-              <ProtectedRoute>
-                <CronogramaPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/portfolio" 
-            element={
-              <ProtectedRoute>
-                <PortfolioPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/relatorios" 
-            element={
-              <ProtectedRoute>
-                <RelatoriosPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/configuracoes" 
-            element={
-              <ProtectedRoute>
-                <ConfiguracoesPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/perfil" 
-            element={
-              <ProtectedRoute>
-                <PerfilPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route path="/" element={<Navigate to="/login" replace />} />
-        </Routes>
-      </Router>
+      <DashboardProvider>
+        <Router>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route 
+              path="/dashboard" 
+              element={
+                <ProtectedRoute>
+                  <DashboardPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/projetos" 
+              element={
+                <ProtectedRoute>
+                  <ProjetosPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/clientes" 
+              element={
+                <ProtectedRoute>
+                  <ClientesPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/orcamentos" 
+              element={
+                <ProtectedRoute>
+                  <OrcamentosPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/cronograma" 
+              element={
+                <ProtectedRoute>
+                  <CronogramaPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/portfolio" 
+              element={
+                <ProtectedRoute>
+                  <PortfolioPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/relatorios" 
+              element={
+                <ProtectedRoute>
+                  <RelatoriosPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/configuracoes" 
+              element={
+                <ProtectedRoute>
+                  <ConfiguracoesPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/perfil" 
+              element={
+                <ProtectedRoute>
+                  <PerfilPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route path="/" element={<Navigate to="/login" replace />} />
+          </Routes>
+        </Router>
+      </DashboardProvider>
     </AuthProvider>
   );
 }
