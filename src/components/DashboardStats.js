@@ -24,7 +24,7 @@ const DashboardStats = ({ stats }) => {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
       <StatCard 
         icon={Users} 
-        title="Total de Clientes" 
+        title="Total de Clientes Ativos" 
         value={stats?.totalClientes}
         color="blue"
       />
